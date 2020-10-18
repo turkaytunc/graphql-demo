@@ -2,6 +2,7 @@ require('dotenv').config();
 const app = require('express')();
 const cors = require('cors');
 const helmet = require('helmet');
+const { graphqlHTTP } = require('express-graphql');
 
 const PORT = process.env.PORT || 3001;
 
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(helmet());
+app.use('/graphql', graphqlHTTP());
 
 // Test
 
