@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/turkaytunc/graphql-demo/issues"
   },
-  "homepage": "https://github.com/turkaytunc/graphql-demo#readme"
+  "homepage": "https://github.com/turkaytunc/graphql-demo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1"
+  }
 }
