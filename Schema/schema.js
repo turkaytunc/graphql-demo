@@ -25,7 +25,7 @@ const authors = [
   { id: '3', name: 'deli', age: 20 },
 ];
 
-// Object Types
+//#region Object Types
 const BookType = new GraphQLObjectType({
   name: 'Book',
   fields: () => ({
@@ -58,7 +58,9 @@ const AuthorType = new GraphQLObjectType({
     },
   }),
 });
+//#endregion
 
+//#region Query
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
@@ -92,7 +94,9 @@ const RootQuery = new GraphQLObjectType({
     },
   },
 });
+//#endregion
 
+//#region Mutation
 const Mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
@@ -128,6 +132,7 @@ const Mutation = new GraphQLObjectType({
     },
   },
 });
+//#endregion
 
 module.exports = new GraphQLSchema({
   query: RootQuery,
