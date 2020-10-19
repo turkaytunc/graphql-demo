@@ -35,7 +35,7 @@ const BookType = new GraphQLObjectType({
     author: {
       type: new GraphQLList(AuthorType),
       resolve(parent, args) {
-        const author = authors.filter((item) => item.id == parent.authorId);
+        const author = Author.findById(parent.authorId);
         return author;
       },
     },
@@ -51,9 +51,7 @@ const AuthorType = new GraphQLObjectType({
     books: {
       type: new GraphQLList(BookType),
       resolve(parent, args) {
-        let bookObj = books.filter((item) => item.authorId == parent.id);
-        console.log(bookObj);
-        return bookObj;
+        return Book.find({ authorId: parent.id });
       },
     },
   }),
