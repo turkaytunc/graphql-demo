@@ -12,6 +12,11 @@ const DBPASSWORD = process.env.DBPASSWORD;
 const DBNAME = 'gQL';
 const DBURI = `mongodb+srv://${DBUSERNAME}:${DBPASSWORD}@codecamp-graphql.ihj2d.mongodb.net/${DBNAME}?retryWrites=true&w=majority`;
 
+mongoose.connect(DBURI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.once('open', () => {
+  console.log('Connected');
+});
+
 // Middleware
 
 app.use(cors());
