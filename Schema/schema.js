@@ -8,22 +8,8 @@ const {
   GraphQLID,
   GraphQLInt,
   GraphQLList,
+  GraphQLNonNull,
 } = graphql;
-
-// Mock data
-
-const books = [
-  { id: '2', authorId: '1', name: 'book2', genre: 'Horror' },
-  { id: '5', authorId: '2', name: 'book5', genre: 'Fantasy' },
-  { id: '3', authorId: '3', name: 'book3', genre: 'Horror' },
-  { id: '7', authorId: '3', name: 'book7', genre: 'Fantasy' },
-];
-
-const authors = [
-  { id: '1', name: 'ali', age: 65 },
-  { id: '2', name: 'veli', age: 45 },
-  { id: '3', name: 'deli', age: 20 },
-];
 
 //#region Object Types
 const BookType = new GraphQLObjectType({
